@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # Built-in apps
+    # Built-in Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,8 +41,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'jokes.apps.JokesConfig',
-    'pages.apps.PagesConfig',
-    
+    'pages.apps.PagesConfig',   
 ]
 
 MIDDLEWARE = [

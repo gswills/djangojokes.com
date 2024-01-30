@@ -5,7 +5,7 @@ from .models import Joke
 class JokeForm(ModelForm):
     class Meta:
         model = Joke
-        fields = ['question', 'answer','category']
+        fields = ['question', 'answer','category','tags']
         widgets = {
             'question': Textarea(
                 attrs={'cols': 80, 'rows': 3, 'autofocus': True}
@@ -15,5 +15,6 @@ class JokeForm(ModelForm):
             )
         }
         help_texts = {
-            'question': 'No dirty jokes please.'
+            'question': 'Please, no dirty jokes.',
+            'tags': 'To select multiple tags: On Windows use Ctrl-click, on Mac use Command-click'
         }

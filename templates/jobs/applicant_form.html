@@ -8,6 +8,11 @@
     <form method="post" novalidate>
       {% csrf_token %}
       <div class="row">
+        <div class="col-md-6">
+          {{ form.job|as_crispy_field }}
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-6 mb-0">
           {{ form.first_name|as_crispy_field }}
         </div>

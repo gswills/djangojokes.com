@@ -1,15 +1,17 @@
 import html
 from django.urls import reverse_lazy
-from django.views.generic import FormView, TemplateView
+from django.views.generic import CreateView, TemplateView
 
 # Create your views here.
 
 # Cannot import send_email -- as the utility is incomplete - no SendGrid account/API Key
 #   from common.utils.email import send_email  
+
+from .models import Applicant
 from .forms import JobApplicationForm
 
-class JobAppView(FormView):
-    template_name = 'jobs/joke_writer.html'
+class JobAppView(CreateView):
+    model = Applicant
     form_class = JobApplicationForm
     success_url = reverse_lazy('jobs:thanks')
 

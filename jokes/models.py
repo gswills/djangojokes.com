@@ -31,7 +31,8 @@ class Category(models.Model):
 
 # By moving the class Category(models.Model): above the Joke class,
 # The category = models.ForeignKey () does not error  (could have 
-# just put 'Category' instead of Category, and left the order alone)  
+# just put 'Category' instead of Category, and left the order alone) 
+         
 class Joke(models.Model): 
     question = models.TextField(max_length=200)
     answer = models.TextField(max_length=100, blank=True)

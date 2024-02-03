@@ -14,6 +14,9 @@ class JokeCreateView(CreateView):
     model = Joke
     form_class = JokeForm
   
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 
 class JokeDeleteView(DeleteView):

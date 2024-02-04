@@ -34,3 +34,4 @@ urlpatterns = [
     path('jokes/', include('jokes.urls')),
     path('', include('pages.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# The appended setting only works when DEBUG = TRUE - not in production

@@ -1,11 +1,12 @@
 import filetype
 from datetime import datetime
+from private_storage.fields import PrivateFileField
 
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
 from django.db import models
 
-from private_storage.fields import PrivateFileField
+
 
 def validate_future_date(value):
     if value < datetime.now().date():

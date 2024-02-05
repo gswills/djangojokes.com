@@ -45,8 +45,8 @@ class JokeDetailView(DetailView):
 
 class JokeListView(ListView):
     model = Joke
-
-
+    paginate_by = 4
+    ordering = ['-question'] # the - forces a decending order
 class JokeUpdateView(SuccessMessageMixin, UserPassesTestMixin, UpdateView):
     model = Joke
     form_class = JokeForm

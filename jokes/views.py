@@ -1,23 +1,19 @@
 import json
+
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import JsonResponse
-
 from django.urls import reverse_lazy
-
 from django.views.generic import (
     CreateView, DeleteView, DetailView, ListView, UpdateView
 ) 
 
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.messages.views import SuccessMessageMixin
-
 from .models import Joke, JokeVote
 from .forms import JokeForm
 
-from django.contrib import messages
-
 
 # Create your views here.
-
 class JokeCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     model = Joke
     form_class = JokeForm
